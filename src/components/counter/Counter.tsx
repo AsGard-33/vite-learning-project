@@ -7,20 +7,16 @@ function Counter() {
 
   const handleMinus = () => setCount(prevCount => prevCount - 1);
   const handlePlus = () => setCount(prevCount => prevCount + 1);
-  const handleMultiply = () => setCount(prevCount => formatNumber(prevCount * 2));
-  const handleDivide = () => setCount(prevCount => formatNumber(prevCount / 2));
-
-  const formatNumber = (num: number) => {
-    return Math.round(num * 100) / 100;
-  };
+  const handleMultiply = () => setCount(prevCount => parseFloat((prevCount * 2).toFixed(2)));
+  const handleDivide = () => setCount(prevCount => parseFloat((prevCount / 2).toFixed(2)));
 
   return (
     <CounterWrapper>
       <ButtonControl>
         <Button name="-" onClick={handleMinus} />
-        <Button name="Умножить" onClick={handleMultiply} />
+        <Button name="multiply" onClick={handleMultiply} />
         <Count>{count}</Count>
-        <Button name="Разделить" onClick={handleDivide} />
+        <Button name="divide" onClick={handleDivide} />
         <Button name="+" onClick={handlePlus} />
       </ButtonControl>
     </CounterWrapper>
