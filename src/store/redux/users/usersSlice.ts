@@ -25,7 +25,7 @@ export const usersSlice = createAppSlice({
     ),
 
     removeAllUsers: create.reducer((state: UsersSliceState) => {
-      state.users = []
+      return {...usersSliceInitialState};
     }),
   }),
   selectors: {
